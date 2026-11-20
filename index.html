@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Potato Coffee Shop</title>
+<meta name="theme-color" content="#3b2414">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Potato Coffee">
+<link rel="apple-touch-icon" href="assets/icona-192.png">
+<link rel="icon" type="image/png" href="assets/icona-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stile.css?v=202611201517">
+</head>
+<body>
+<div id="app">
+  <header class="insegna">
+    <img class="insegna-patata" src="assets/icona-128.png" alt="">
+    <div class="insegna-testi">
+      <h1>Potato Coffee Shop</h1>
+      <p id="cartellino" class="cartellino">...</p>
+    </div>
+    <button id="musica-tasto" class="tasto-audio" aria-label="Musica">♫</button>
+    <button id="muto" class="tasto-audio" aria-label="Suoni">♪</button>
+  </header>
+
+  <!-- Scheda BANCONE -->
+  <section id="scheda-bancone" class="scheda">
+    <div class="scena" id="scena">
+      <img class="sfondo" src="assets/sfondo.png" alt="">
+      <img id="barista" class="barista" src="assets/barista/saluto.png" alt="Il barista">
+      <div id="vapore" class="vapore" hidden><i></i><i></i><i></i></div>
+      <img id="sul-banco" class="sul-banco" alt="" hidden>
+      <div id="cartello-chiuso" class="cartello-chiuso" hidden>CHIUSO</div>
+    </div>
+    <div class="pannello dialogo" id="dialogo">
+      <span class="targhetta">Il barista</span>
+      <p id="battuta"></p>
+    </div>
+    <div id="vista"></div>
+  </section>
+
+  <!-- Scheda TESSERA -->
+  <section id="scheda-tessera" class="scheda" hidden></section>
+
+  <!-- Scheda BARISTA -->
+  <section id="scheda-barista" class="scheda" hidden></section>
+
+  <nav class="schede">
+    <button data-scheda="bancone" class="attiva"><img src="assets/bevande/americano.png" alt=""><span>Bancone</span></button>
+    <button data-scheda="tessera"><img src="assets/icone/timbro.png" alt=""><span>Tessera</span></button>
+    <button data-scheda="barista"><img src="assets/icone/stella.png" alt=""><span>Barista</span></button>
+  </nav>
+</div>
+
+<!-- Parola d'ordine -->
+<div id="porta" class="porta" hidden>
+  <div class="pannello porta-pannello">
+    <img src="assets/icona-192.png" alt="" class="porta-icona">
+    <h2>Potato Coffee Shop</h2>
+    <p>Locale riservato a una sola cliente.<br>Qual è la parola d'ordine?</p>
+    <form id="porta-form">
+      <input id="porta-parola" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="parola d'ordine">
+      <button class="bottone verde" type="submit">Entra</button>
+    </form>
+    <p id="porta-errore" class="errore" hidden>Non è quella. Chiedi al barista.</p>
+  </div>
+</div>
+
+<audio id="musica" src="assets/musica.mp3" loop preload="none"></audio>
+<script src="comune.js?v=202611201517"></script>
+<script src="app.js?v=202611201517"></script>
+</body>
+</html>
